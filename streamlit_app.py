@@ -15,6 +15,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import LabelEncoder
+import streamlit as st 
 # %matplotlib inline
 
 """Traitement des données"""
@@ -37,9 +38,17 @@ plt.figure(figsize=(20,10))
 sns.histplot(data_lung_only[data_lung_only['GENDER']=='F']['AGE'],kde=True,color='red')
 plt.title("Age vs Count for Female")
 
-sns.catplot('SMOKING',kind='count',data=data_lung_only,palette='BuGn',order=[1,2]).set_xticklabels(['Non Fumeur','Fumeur'])
 
-sns.catplot('GENDER',data=data_lung_only,kind='count',palette='BuGn').set(title='Comparaison Hommes/Femmes').set_xticklabels(['Femme','Homme'])
+
+fig = plt.figure(figsize=(10, 4))
+sns.countplot(x="SMOKING", data=data_lung_only)
+
+st.pyplot(fig)
+
+fig = plt.figure(figsize=(10, 4))
+sns.countplot(x="GENDER", data=data_lung_only)
+
+st.pyplot(fig)
 
 Label= LabelEncoder()
 data['LUNG_CANCER']= Label.fit_transform(data['LUNG_CANCER'])
