@@ -8,6 +8,3 @@ xgboost
 catboost
 lightgbm
 plotly
-altair
-base64
-csv
