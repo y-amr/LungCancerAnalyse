@@ -19,7 +19,7 @@ from sklearn.preprocessing import LabelEncoder
 
 """Traitement des données"""
 
-data = pd.read_csv("/content/survey lung cancer.csv")
+data = pd.read_csv("/survey lung cancer.csv")
 data.head()
 
 sns.countplot(x='LUNG_CANCER',hue='LUNG_CANCER',data=data)
