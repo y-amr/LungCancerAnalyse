@@ -1,10 +1,5 @@
-sklearn
-streamlit
+numpy 
 pandas
-numpy
 matplotlib
 seaborn
-xgboost
-catboost
-lightgbm
-plotly
+sklearn
